@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Portal</title>
+    <link rel="stylesheet" href="stud.css"> <!-- Link to your CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+    <script src="stud.js" defer></script> <!-- Include your JavaScript -->
+</head>
+<body>
+    <header class="header">
+        <h1>Student Performance Portal</h1>
+    </header>
+    <main class="container">
+        <div class="form-group">
+            <b><label for="student-id-input">Enter Student ID:</label></b>
+            <input type="text" id="student-id-input" placeholder="Enter your registration number">
+        </div>
+        <button onclick="loadStudentData()">Show Data</button>
+        <div id="student-name-display" class="student-info"></div>
+        <div class="charts">
+            <div class="chart-container">
+                <canvas id="grades-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="attendance-chart"></canvas>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

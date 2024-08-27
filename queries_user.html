@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Query System</title>
+  <link rel="stylesheet" href="queries_user.css">
+</head>
+<body>
+  <header>
+    <center><h1>Query System</h1></center>
+  </header>
+  <main>
+    <form id="query-form" aria-live="polite">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" aria-required="true"><br><br>
+      <label for="user-type">User Type:</label>
+      <select id="user-type" name="user-type" aria-required="true">
+        <option value="student">Student</option>
+        <option value="parent">Parent</option>
+      </select><br><br>
+      <div id="student-container">
+        <label for="registration">Registration No. :</label>
+        <input type="number" id="registration" name="registration" aria-required="true"><br><br>
+        <label for="student-query">Query:</label>
+        <textarea id="student-query" name="query" rows="5" cols="30" aria-required="true"></textarea>
+      </div>
+      <div id="parent-container" style="display: none;">
+        <label for="parent-type">Parent Type:</label>
+        <select id="parent-type" name="parent-type" aria-required="true">
+          <option value="mother">Mother's</option>
+          <option value="father">Father's</option>
+        </select><br><br>
+        <label for="parent-student-name">Student Name:</label>
+        <input type="text" id="parent-student-name" name="parent-student-name" aria-required="true"><br><br>
+        <label for="parent-registration">Registration No. :</label>
+        <input type="number" id="parent-registration" name="parent-registration" aria-required="true"><br><br>
+        <label for="parents-query">Query:</label>
+        <textarea id="parents-query" name="query" rows="5" cols="30" aria-required="true"></textarea>
+      </div>
+      <input type="submit" value="Submit Query">
+    </form>
+    <div id="success-message" style="display: none;">
+      <img src="tick.jpg" alt="Tick" id="tick-image">
+      <h2>Query Successfully Submitted!</h2>
+      <p>Thank you for submitting your query. We will get back to you soon.</p>
+      <button id="return-to-queries">Return to Queries</button>
+    </div>
+  </main>
+  <script src="queries.js"></script>
+</body>
+</html>

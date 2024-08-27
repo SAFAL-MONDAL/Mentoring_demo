@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Meeting Website</title>
+    <link rel="stylesheet" href="admin_meeting.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Portal - Meeting Website</h1>
+    </header>
+    <main>
+        <section class="meeting-box">
+            <h2>Parents' Meeting</h2>
+            <p>Manage the details of the parents' meeting.</p>
+            <h3>Update Meeting Link</h3>
+            <input type="text" id="new-meeting-link-input-1" placeholder="Enter new meeting link">
+            <button onclick="updateMeetingLink('meeting-link-1', 'new-meeting-link-input-1', 'success-message-1', 'error-message-1')">Save</button>
+            <p id="success-message-1" class="success-message">Saved successfully!</p>
+            <p id="error-message-1" class="error-message">Please enter a meeting link.</p>
+            
+            <h3>Update Meeting Details</h3>
+            <label for="next-meeting-date-1">Next Meeting Date:</label>
+            <input type="date" id="next-meeting-date-1">
+            <label for="meeting-agenda-1">Agenda:</label>
+            <input type="text" id="meeting-agenda-1" placeholder="Enter agenda">
+            <button onclick="updateMeetingDetails(1, 'success-message-2', 'error-message-2')">Save Details</button>
+            <p id="success-message-2" class="success-message">Saved successfully!</p>
+            <p id="error-message-2" class="error-message">Please fill in all details.</p>
+
+            <h3>Important Reminders</h3>
+            <textarea id="important-reminders-1" placeholder="Enter important reminders"></textarea>
+            <button onclick="updateReminders(1, 'success-message-3', 'error-message-3')">Save Reminders</button>
+            <p id="success-message-3" class="success-message">Saved successfully!</p>
+            <p id="error-message-3" class="error-message">Please enter important reminders.</p>
+        </section>
+
+        <section class="meeting-box">
+            <h2>Students' Meeting</h2>
+            <p>Manage the details of the students' meeting.</p>
+            <h3>Update Meeting Link</h3>
+            <input type="text" id="new-meeting-link-input-2" placeholder="Enter new meeting link">
+            <button onclick="updateMeetingLink('meeting-link-2', 'new-meeting-link-input-2', 'success-message-4', 'error-message-4')">Save</button>
+            <p id="success-message-4" class="success-message">Saved successfully!</p>
+            <p id="error-message-4" class="error-message">Please enter a meeting link.</p>
+            
+            <h3>Update Meeting Details</h3>
+            <label for="next-meeting-date-2">Next Meeting Date:</label>
+            <input type="date" id="next-meeting-date-2">
+            <label for="meeting-agenda-2">Agenda:</label>
+            <input type="text" id="meeting-agenda-2" placeholder="Enter agenda">
+            <button onclick="updateMeetingDetails(2, 'success-message-5', 'error-message-5')">Save Details</button>
+            <p id="success-message-5" class="success-message">Saved successfully!</p>
+            <p id="error-message-5" class="error-message">Please fill in all details.</p>
+
+            <h3>Important Reminders</h3>
+            <textarea id="important-reminders-2" placeholder="Enter important reminders"></textarea>
+            <button onclick="updateReminders(2, 'success-message-6', 'error-message-6')">Save Reminders</button>
+            <p id="success-message-6" class="success-message">Saved successfully!</p>
+            <p id="error-message-6" class="error-message">Please enter important reminders.</p>
+        </section>
+    </main>
+
+    <script>
+        // Function to update a meeting link
+        function updateMeetingLink(linkId, newInputId, successMessageId, errorMessageId) {
+            const newMeetingLinkInput = document.getElementById(newInputId);
+            const newMeetingLink = newMeetingLinkInput.value;
+            if (newMeetingLink.trim() === '') {
+                showErrorMessage(errorMessageId);
+                hideSuccessMessage(successMessageId);
+                return;
+            }
+            localStorage.setItem(linkId, newMeetingLink);
+            console.log(`Meeting link updated: ${newMeetingLink}`);
+            showSuccessMessage(successMessageId);
+        }
+
+        // Function to update meeting details
+        function updateMeetingDetails(meetingNumber, successMessageId, errorMessageId) {
+            const dateInput = document.getElementById(`next-meeting-date-${meetingNumber}`);
+            const agendaInput = document.getElementById(`meeting-agenda-${meetingNumber}`);
+            const date = dateInput.value;
+            const agenda = agendaInput.value;
+            if (date.trim() === '' || agenda.trim() === '') {
+                showErrorMessage(errorMessageId);
+                hideSuccessMessage(successMessageId);
+                return;
+            }
+            const meetingData = {
+                date,
+                agenda
+            };
+            localStorage.setItem(`meeting-details-${meetingNumber}`, JSON.stringify(meetingData));
+            console.log(`Meeting details updated - Date: ${date}, Agenda: ${agenda}`);
+            showSuccessMessage(successMessageId);
+        }
+
+        // Function to update important reminders
+        function updateReminders(meetingNumber, successMessageId, errorMessageId) {
+            const remindersTextarea = document.getElementById(`important-reminders-${meetingNumber}`);
+            const reminders = remindersTextarea.value;
+            if (reminders.trim() === '') {
+                showErrorMessage(errorMessageId);
+                hideSuccessMessage(successMessageId);
+                return;
+            }
+            localStorage.setItem(`reminders-${meetingNumber}`, reminders);
+            console.log(`Important reminders updated: ${reminders}`);
+            showSuccessMessage(successMessageId);
+        }
+
+        // Function to show the success message
+        function showSuccessMessage(successMessageId) {
+            const successMessage = document.getElementById(successMessageId);
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000); // Hide the message after 3 seconds
+        }
+
+        // Function to show the error message
+        function showErrorMessage(errorMessageId) {
+            const errorMessage = document.getElementById(errorMessageId);
+            errorMessage.style.display = 'block';
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 3000); // Hide the message after 3 seconds
+        }
+
+        // Function to hide the success message
+        function hideSuccessMessage(successMessageId) {
+            const successMessage = document.getElementById(successMessageId);
+            successMessage.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

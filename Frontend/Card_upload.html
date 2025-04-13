@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Report Card Upload Portal</title>
+    <link rel="stylesheet" href="Card_upload.css">
+</head>
+<body>
+    <header>
+        <h1>Student Report Card Upload Portal</h1>
+    </header>
+
+    <div class="container">
+        <form id="report-form">
+            <label for="reg_no">Registration No:</label>
+            <input type="text" id="reg_no" name="reg_no" placeholder="Enter your registration number" required>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="report_card">Upload Report Card (PDF):</label>
+            <input type="file" id="report_card" name="report_card" accept="application/pdf" required>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="Card_upload.js"></script>
+</body>
+</html>

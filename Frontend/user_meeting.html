@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Portal - Meeting Website</title>
+    <link rel="stylesheet" href="user_meeting.css">
+</head>
+<body>
+    <header>
+        <h1>Meeting Info</h1>
+    </header>
+    <main>
+        <section class="meeting-box">
+            <h2>Parents' Meeting</h2>
+            <p>Join us for our parents' meeting to discuss important updates and events.</p>
+            <button id="parents-join-btn" onclick="joinMeeting('parents')">Join Meeting</button>
+            
+            <section class="meeting-updates">
+                <h3>Meeting Updates</h3>
+                <ul>
+                    <li id="parents-meeting-date">Next meeting: </li>
+                    <li id="parents-meeting-agenda">Agenda: </li>
+                </ul>
+            </section>
+            
+            <section class="meeting-updates">
+                <h3>Important Reminders</h3>
+                <ul id="parents-meeting-reminders"></ul>
+            </section>
+        </section>
+
+        <section class="meeting-box">
+            <h2>Students' Meeting</h2>
+            <p>Join us for our students' meeting to discuss academic progress and goals.</p>
+            <button id="students-join-btn" onclick="joinMeeting('students')">Join Meeting</button>
+            
+            <section class="meeting-updates">
+                <h3>Meeting Updates</h3>
+                <ul>
+                    <li id="students-meeting-date">Next meeting: </li>
+                    <li id="students-meeting-agenda">Agenda: </li>
+                </ul>
+            </section>
+            
+            <section class="meeting-updates">
+                <h3>Important Reminders</h3>
+                <ul id="students-meeting-reminders"></ul>
+            </section>
+        </section>
+    </main>
+
+    <script>
+        const BASE_URL = 'http://bd-lb-1306888275.ap-south-1.elb.amazonaws.com/api';
+
+        async function loadMeetingData() {
+            try {
+                const response = await fetch(`${BASE_URL}/meetings`);
+                const meetings = await response.json();
+
+                meetings.forEach(meeting => {
+                    const type = meeting.meetingType;
+                    
+                    // Store meeting link for join button
+                    sessionStorage.setItem(`${type}-meeting-link`, meeting.link);
+                    
+                    // Update meeting info
+                    document.getElementById(`${type}-meeting-date`).textContent = 
+                        `Next meeting: ${new Date(meeting.date).toLocaleString()}`;
+                    document.getElementById(`${type}-meeting-agenda`).textContent = 
+                        `Agenda: ${meeting.agenda || 'No agenda set'}`;
+                    
+                    // Update reminders
+                    const remindersList = document.getElementById(`${type}-meeting-reminders`);
+                    remindersList.innerHTML = meeting.reminders
+                        .map(reminder => `<li>${reminder}</li>`)
+                        .join('') || '<li>No reminders set</li>';
+                });
+            } catch (error) {
+                console.error('Error loading meeting data:', error);
+            }
+        }
+
+        function joinMeeting(type) {
+            const meetingLink = sessionStorage.getItem(`${type}-meeting-link`);
+            if (meetingLink) {
+                window.open(meetingLink, '_blank');
+            } else {
+                alert('Meeting link not available');
+            }
+        }
+
+        // Load meeting data when page loads
+        window.addEventListener('load', loadMeetingData);
+    </script>
+</body>
+</html>

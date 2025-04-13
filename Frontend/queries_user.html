@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Query</title>
+    <link rel="stylesheet" href="queries_user.css">
+</head>
+<body>
+    <header>
+        <h1>Submit Query / Grievance</h1>
+    </header>
+
+    <div class="container">
+        <form id="queryForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label>User Type:</label>
+            <div class="radio-group">
+                <input type="radio" id="student" name="userType" value="Student" checked>
+                <label for="student">Student</label>
+                <input type="radio" id="parent" name="userType" value="Parent">
+                <label for="parent">Parent</label>
+            </div>
+
+            <!-- Student Section -->
+            <div id="studentSection">
+                <label for="registration">Registration No.:</label>
+                <input type="text" id="registration" name="registration">
+
+                <label for="studentQuery">Query:</label>
+                <textarea id="studentQuery" name="query" required></textarea>
+            </div>
+
+            <!-- Parent Section -->
+            <div id="parentSection" style="display: none;">
+                <label>Parent Type:</label>
+                <div class="radio-group">
+                    <input type="radio" id="mother" name="parentType" value="Mother's">
+                    <label for="mother">Mother's</label>
+                    <input type="radio" id="father" name="parentType" value="Father's">
+                    <label for="father">Father's</label>
+                </div>
+
+                <label for="parentStudentName">Student Name:</label>
+                <input type="text" id="parentStudentName" name="parentStudentName">
+
+                <label for="parentRegistration">Registration No.:</label>
+                <input type="text" id="parentRegistration" name="parentRegistration">
+
+                <label for="parentQuery">Query:</label>
+                <textarea id="parentQuery" name="query"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Query</button>
+        </form>
+
+        <div id="successMessage" class="success-message" style="display: none;">
+            <h2>Query Successfully Submitted!</h2>
+            <p>Thank you for submitting your query. We will get back to you soon.</p>
+            <a href="queries_user.html" class="return-btn">Return to Queries</a>
+        </div>
+    </div>
+
+    <script src="queries.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Dashboard</title>
+  <link rel="stylesheet" href="HOME.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="box" onclick="openPage('feedback.html')">
+      <i class="fas fa-comments"></i>
+      <h3>Parents Feedback</h3>
+    </div>
+    <div class="box" onclick="openPage('user_meeting.html')">
+      <i class="fas fa-calendar-alt"></i>
+      <h3>Meetings</h3>
+    </div>
+    <div class="box" onclick="openPage('stud_performance.html')">
+      <i class="fas fa-chart-bar"></i>
+      <h3>Student Performance</h3>
+    </div>
+    <div class="box" onclick="openPage('excel_view.html')">
+      <i class="fas fa-users"></i>
+      <h3>Mentor List</h3>
+    </div>
+    <div class="box" onclick="openPage('queries_user.html')">
+      <i class="fas fa-question"></i>
+      <h3>Queries/Grievance</h3>
+    </div>
+    <div class="box" onclick="openPage('Card_view.html')">
+      <i class="fas fa-file-alt"></i>
+      <h3>Report Card</h3>
+    </div>
+  </div>
+
+  <script>
+    function openPage(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>

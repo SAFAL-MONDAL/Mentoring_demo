@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor List Update Portal</title>
+    <link rel="stylesheet" href="excel_upload.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script> <!-- SheetJS -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1> Update Mentor List</h1>
+    </header>
+
+    <!-- Form Container -->
+    <div class="container">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="excelFile">Upload Excel File:</label>
+            <input type="file" id="excelFile" accept=".xlsx, .xls" required>
+            <button type="submit" class="submit-btn">Upload</button>
+                <!-- Navigation Button -->
+        </form>
+
+        <!-- New Clear Data Button -->
+        <button id="clearDataButton" class="clear-button">Clear Data</button>
+
+        <!-- Table Container -->
+        <div id="tableContainer"></div>
+    </div>
+
+
+
+    <script src="excel_upload.js"></script>
+</body>
+</html>

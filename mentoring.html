@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentoring Record</title>
+<link rel="stylesheet" href="mentoring.css">
+</head>
+<body>
+    <div class="container">
+        <form id="mentor-form" action="/submit" method="post" enctype="multipart/form-data">
+            <!-- Page 1 -->
+            <div class="form-section" id="page1">
+                <img src="cutm.png" alt="University Logo">
+                <h1>Mentoring Record</h1>
+                <label for="mentee-photo">Upload Mentee Photo:</label>
+                <input type="file" id="mentee-photo" name="mentee-photo" accept="image/*">
+
+                <label for="student-name">Student’s Name:</label>
+                <input type="text" id="student-name" name="student-name">
+                
+                <label for="regd-no">Regd. No.:</label>
+                <input type="text" id="regd-no" name="regd-no">
+                
+                <label for="program">Program:</label>
+                <input type="text" id="program" name="program">
+                
+                <label for="mentor-name">Mentor’s Name:</label>
+                <input type="text" id="mentor-name" name="mentor-name">
+                
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department">
+                
+                <label for="school">School:</label>
+                <input type="text" id="school" name="school">
+                
+                <label for="campus">Campus:</label>
+                <input type="text" id="campus" name="campus">
+                
+                <button type="button" onclick="showPageTwo()">Next Page</button>
+            </div>
+
+            <!-- Page 2 -->
+            <div class="form-section page-two" id="page2">
+                <h1>MENTEE’S PERSONAL RECORD</h1>
+                <h2>Particulars of the Mentee:</h2>
+                <label for="mentee-name">1. Name:</label>
+                <input type="text" id="mentee-name" name="mentee-name">
+
+                <label for="mentee-program">2. Program:</label>
+                <input type="text" id="mentee-program" name="mentee-program">
+
+                <label for="branch">3. Branch:</label>
+                <input type="text" id="branch" name="branch">
+
+                <label for="section">4. Section:</label>
+                <input type="text" id="section" name="section">
+
+                <label for="duration">5. Duration of Course:</label>
+                <input type="text" id="duration" name="duration">
+
+                <label for="mentee-regd-no">6. Regd. No:</label>
+                <input type="text" id="mentee-regd-no" name="mentee-regd-no">
+
+                <label for="dob">7. Date of Birth:</label>
+                <input type="date" id="dob" name="dob">
+
+                <label for="category">8. Category:</label>
+                <input type="text" id="category" name="category">
+
+                <label for="hosteller-day-scholar">9. Hosteller/Day scholar:</label>
+                <input type="text" id="hosteller-day-scholar" name="hosteller-day-scholar">
+
+                <label for="mail-id">10. Mail id (personal):</label>
+                <input type="email" id="mail-id" name="mail-id">
+
+                <label for="mobile-number">11. Mobile Number:</label>
+                <input type="tel" id="mobile-number" name="mobile-number">
+
+                <label for="blood-group">12``. Blood Group:</label>
+                <input type="text" id="blood-group" name="blood-group">
+
+                <label for="hobby-passion">13. Hobby / Passion:</label>
+                <input type="text" id="hobby-passion" name="hobby-passion">
+
+                <label for="present-address">14. Present Address:</label>
+                <textarea id="present-address" name="present-address"></textarea>
+                
+                <h2>Academic Performance:</h2>
+                <label for="semester-year">Semester / Year: I / II / III / IV / V / VI / VII / VIII</label>
+                <input type="text" id="semester-year" name="semester-year">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sl. No.</th>
+                            <th>Name of the Subject</th>
+                            <th>Grade</th>
+                            <th>Percentage of Attendance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" name="subject1"></td>
+                            <td><input type="text" name="grade1"></td>
+                            <td><input type="text" name="attendance1"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" name="subject2"></td>
+                            <td><input type="text" name="grade2"></td>
+                            <td><input type="text" name="attendance2"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" name="subject3"></td>
+                            <td><input type="text" name="grade3"></td>
+                            <td><input type="text" name="attendance3"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" name="subject4"></td>
+                            <td><input type="text" name="grade4"></td>
+                            <td><input type="text" name="attendance4"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" name="subject5"></td>
+                            <td><input type="text" name="grade5"></td>
+                            <td><input type="text" name="attendance5"></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><input type="text" name="subject6"></td>
+                            <td><input type="text" name="grade6"></td>
+                            <td><input type="text" name="attendance6"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Achievements / Awards:</h2>
+                <label for="achievements">Any Achievement / Award received in Culture / Sports / Responsibility events:</label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sl. No.</th>
+                            <th>Name of the Event</th>
+                            <th>Date</th>
+                            <th>Venue</th>
+                            <th>Participated / Achieved</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" name="event1"></td>
+                            <td><input type="text" name="date1"></td>
+                            <td><input type="text" name="venue1"></td>
+                            <td><input type="text" name="achieved1"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" name="event2"></td>
+                            <td><input type="text" name="date2"></td>
+                            <td><input type="text" name="venue2"></td>
+                            <td><input type="text" name="achieved2"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" name="event3"></td>
+                            <td><input type="text" name="date3"></td>
+                            <td><input type="text" name="venue3"></td>
+                            <td><input type="text" name="achieved3"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" name="event4"></td>
+                            <td><input type="text" name="date4"></td>
+                            <td><input type="text" name="venue4"></td>
+                            <td><input type="text" name="achieved4"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" name="event5"></td>
+                            <td><input type="text" name="date5"></td>
+                            <td><input type="text" name="venue5"></td>
+                            <td><input type="text" name="achieved5"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Seminars / Webinars / Hackathons / Workshops:</h2>
+                <label for="events">Any Seminar / Webinar / Hackathon / Workshop Organised / Attended:</label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sl. No.</th>
+                            <th>Name of the Event</th>
+                            <th>Date</th>
+                            <th>Venue</th>
+                            <th>Attended / Organised</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="text" name="event1"></td>
+                            <td><input type="text" name="date1"></td>
+                            <td><input type="text" name="venue1"></td>
+                            <td><input type="text" name="attended-organised1"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="text" name="event2"></td>
+                            <td><input type="text" name="date2"></td>
+                            <td><input type="text" name="venue2"></td>
+                            <td><input type="text" name="attended-organised2"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text" name="event3"></td>
+                            <td><input type="text" name="date3"></td>
+                            <td><input type="text" name="venue3"></td>
+                            <td><input type="text" name="attended-organised3"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="text" name="event4"></td>
+                            <td><input type="text" name="date4"></td>
+                            <td><input type="text" name="venue4"></td>
+                            <td><input type="text" name="attended-organised4"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="text" name="event5"></td>
+                            <td><input type="text" name="date5"></td>
+                            <td><input type="text" name="venue5"></td>
+                            <td><input type="text" name="attended-organised5"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Mentee and Mentor Interaction and Action Details:</h2>
+                <label for="interaction-details">Mentee and Mentor Interaction and Action Details:</label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sl. No.</th>
+                            <th>Date</th>
+                            <th>Mentor Interaction / Discussion Details</th>
+                            <th>Action Taken</th>
+                            <th>If communicated to the Parents mention details</th>
+                            <th>Sign of Mentee</th>
+                            <th>Sign of Mentor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="date" name="date1"></td>
+                            <td><input type="text" name="interaction1"></td>
+                            <td><input type="text" name="action1"></td>
+                            <td><input type="text" name="communication1"></td>
+                            <td><input type="file" name="mentee-signature1" accept="image/*"></td>
+                            <td><input type="file" name="mentor-signature1" accept="image/*"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="date" name="date2"></td>
+                            <td><input type="text" name="interaction2"></td>
+                            <td><input type="text" name="action2"></td>
+                            <td><input type="text" name="communication2"></td>
+                            <td><input type="file" name="mentee-signature2" accept="image/*"></td>
+                            <td><input type="file" name="mentor-signature2" accept="image/*"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="date" name="date3"></td>
+                            <td><input type="text" name="interaction3"></td>
+                            <td><input type="text" name="action3"></td>
+                            <td><input type="text" name="communication3"></td>
+                            <td><input type="file" name="mentee-signature3" accept="image/*"></td>
+                            <td><input type="file" name="mentor-signature3" accept="image/*"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><input type="date" name="date4"></td>
+                            <td><input type="text" name="interaction4"></td>
+                            <td><input type="text" name="action4"></td>
+                            <td><input type="text" name="communication4"></td>
+                            <td><input type="file" name="mentee-signature4" accept="image/*"></td>
+                            <td><input type="file" name="mentor-signature4" accept="image/*"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><input type="date" name="date5"></td>
+                            <td><input type="text" name="interaction5"></td>
+                            <td><input type="text" name="action5"></td>
+                            <td><input type="text" name="communication5"></td>
+                            <td><input type="file" name="mentee-signature5" accept="image/*"></td>
+                            <td><input type="file" name="mentor-signature5" accept="image/*"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Suggestive Points for Discussion with Mentee:</h2>
+                <label for="suggestions">Suggestive Points for Discussion with Mentee:</label>
+                <textarea id="suggestions" name="suggestions"></textarea>
+
+                <h2>Signature Upload:</h2>
+                <div class="signature-upload">
+                    <label for="student-signature">Student's Signature:</label>
+                    <input type="file" id="student-signature" name="student-signature" accept="image/*">
+                </div>
+                <div class="signature-upload">
+                    <label for="mentor-signature">Mentor's Signature:</label>
+                    <input type="file" id="mentor-signature" name="mentor-signature" accept="image/*">
+                </div>
+                <div class="signature-upload">
+                    <label for="hod-signature">HOD's Signature:</label>
+                    <input type="file" id="hod-signature" name="hod-signature" accept="image/*">
+                </div>
+                <button type="button" id="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="mentoring.js"></script>
+    <script>
+        function showPageTwo() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

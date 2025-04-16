@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - Meeting Website</title>
+    <link rel="stylesheet" href="admin_meeting.css">
+</head>
+<body>
+    <header>
+        <h1>Update Meeting Info</h1>
+    </header>
+    <main>
+        <section class="meeting-box">
+            <h2>Parents' Meeting</h2>
+            <p>Manage the details of the parents' meeting.</p>
+            <form id="parents-meeting-form" onsubmit="submitMeeting(event, 'parents')">
+                <div class="form-group">
+                    <h3>Meeting Link</h3>
+                    <input type="text" id="parents-meeting-link" placeholder="Enter meeting link" required>
+                </div>
+
+                <div class="form-group">
+                    <h3>Meeting Details</h3>
+                    <label for="parents-meeting-date">Next Meeting Date:</label>
+                    <input type="datetime-local" id="parents-meeting-date" required>
+                    
+                    <label for="parents-meeting-agenda">Agenda:</label>
+                    <input type="text" id="parents-meeting-agenda" placeholder="Enter agenda">
+                </div>
+
+                <div class="form-group">
+                    <h3>Important Reminders</h3>
+                    <textarea id="parents-meeting-reminders" placeholder="Enter important reminders (one per line)"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Save Meeting</button>
+                <p id="parents-message" class="message"></p>
+            </form>
+        </section>
+
+        <section class="meeting-box">
+            <h2>Students' Meeting</h2>
+            <p>Manage the details of the students' meeting.</p>
+            <form id="students-meeting-form" onsubmit="submitMeeting(event, 'students')">
+                <div class="form-group">
+                    <h3>Meeting Link</h3>
+                    <input type="text" id="students-meeting-link" placeholder="Enter meeting link" required>
+                </div>
+
+                <div class="form-group">
+                    <h3>Meeting Details</h3>
+                    <label for="students-meeting-date">Next Meeting Date:</label>
+                    <input type="datetime-local" id="students-meeting-date" required>
+                    
+                    <label for="students-meeting-agenda">Agenda:</label>
+                    <input type="text" id="students-meeting-agenda" placeholder="Enter agenda">
+                </div>
+
+                <div class="form-group">
+                    <h3>Important Reminders</h3>
+                    <textarea id="students-meeting-reminders" placeholder="Enter important reminders (one per line)"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Save Meeting</button>
+                <p id="students-message" class="message"></p>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const BASE_URL = 'http://bd-lb-1306888275.ap-south-1.elb.amazonaws.com/api';
+
+        async function submitMeeting(event, meetingType) {
+            event.preventDefault();
+            
+            const messageElement = document.getElementById(`${meetingType}-message`);
+            const formData = {
+                meetingType,
+                link: document.getElementById(`${meetingType}-meeting-link`).value.trim(),
+                date: document.getElementById(`${meetingType}-meeting-date`).value,
+                agenda: document.getElementById(`${meetingType}-meeting-agenda`).value.trim(),
+                reminders: document.getElementById(`${meetingType}-meeting-reminders`).value
+                    .split('\n')
+                    .filter(reminder => reminder.trim())
+            };
+
+            try {
+                const response = await fetch(`${BASE_URL}/meetings`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                
+                messageElement.textContent = data.message;
+                messageElement.className = response.ok ? 'message success' : 'message error';
+                
+                if (response.ok) {
+                    // Optional: Reset form after successful submission
+                    document.getElementById(`${meetingType}-meeting-form`).reset();
+                }
+            } catch (error) {
+                messageElement.textContent = 'Failed to save meeting. Please try again.';
+                messageElement.className = 'message error';
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

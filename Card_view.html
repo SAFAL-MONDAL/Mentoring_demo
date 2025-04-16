@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students' Report Cards</title>
+    <link rel="stylesheet" href="Card_view.css">
+</head>
+<body>
+    <header>
+        <h1>Students' Report Cards</h1>
+    </header>
+    <main>
+        <section class="search-section">
+            <h2>Search Report Card</h2>
+            <div class="input-group">
+                <label for="search-reg-no">Enter Registration Number:</label>
+                <input type="text" id="search-reg-no" placeholder="Search by Registration No">
+            </div>
+            <div class="input-group">
+                <label for="semester-filter">Filter by Semester:</label>
+                <select id="semester-filter">
+                    <option value="">All Semesters</option>
+                    <option value="1">1st Semester</option>
+                    <option value="2">2nd Semester</option>
+                    <option value="3">3rd Semester</option>
+                    <option value="4">4th Semester</option>
+                    <option value="5">5th Semester</option>
+                    <option value="6">6th Semester</option>
+                    <option value="7">7th Semester</option>
+                    <option value="8">8th Semester</option>
+                </select>
+            </div>
+            <button id="search-btn">Search</button>
+        </section>
+
+        <section class="report-list-section">
+            <h2>Report Card List</h2>
+            <table id="report-table">
+                <thead>
+                    <tr>
+                        <th>Registration No</th>
+                        <th>Name</th>
+                        <th>Semester</th>
+                        <th>Report Card</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="report-list">
+                </tbody>
+            </table>
+            <p id="no-report-msg" style="display: none;">Report card not found</p>
+        </section>
+    </main>
+
+    <script src="Card_view.js"></script>
+</body>
+</html>

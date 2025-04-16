@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee Response</title>
+    <link rel="stylesheet" href="mentee_responce.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mentee Submissions</h1>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for mentees...">
+            <button id="search-button">Search</button>
+        </div>
+        <ol id="mentee-list"></ol> <!-- Changed to ordered list -->
+        
+        <div id="mentee-details" style="display: none;">
+            <h2>Student Details</h2>
+            <p><strong>Student's Name:</strong> <span id="detail-student-name"></span></p>
+            <p><strong>Regd. No.:</strong> <span id="detail-regd-no"></span></p>
+            <p><strong>Program:</strong> <span id="detail-program"></span></p>
+            <p><strong>Mentor's Name:</strong> <span id="detail-mentor-name"></span></p>
+            <p><strong>Department:</strong> <span id="detail-department"></span></p>
+            <p><strong>School:</strong> <span id="detail-school"></span></p>
+            <p><strong>Campus:</strong> <span id="detail-campus"></span></p>
+
+            <h3>Personal Records</h3>
+            <p><strong>Name:</strong> <span id="detail-mentee-name"></span></p>
+            <p><strong>Branch:</strong> <span id="detail-branch"></span></p>
+            <p><strong>Section:</strong> <span id="detail-section"></span></p>
+            <p><strong>Date of Birth:</strong> <span id="detail-dob"></span></p>
+            <!-- Add more details as needed -->
+        </div>
+        
+        <button id="clear-button">Clear</button>
+    </div>
+
+    <script src="mentee_responce.js"></script>
+</body>
+</html>

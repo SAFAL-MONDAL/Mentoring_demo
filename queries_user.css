@@ -1,0 +1,99 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4a90e2, #d57bfc);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Style */
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+}
+
+/* Container Box for Form */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+/* Form Elements */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Radio Button Group */
+.radio-group {
+    margin-bottom: 20px;
+}
+
+.radio-group input {
+    margin-right: 5px;
+}
+
+/* Submit Button */
+button, .submit-btn {
+    background: linear-gradient(to right, #3671fd, #6f31ff);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover, .submit-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    input[type="text"],
+    textarea {
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+}

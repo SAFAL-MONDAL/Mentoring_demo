@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #4a90e2, #d57bfc);
+}
+
+header {
+    background-color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+    margin: 0;
+    color: #000000;
+}
+
+main {
+    padding: 20px;
+}
+
+.search-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.search-section h2 {
+    color: #000000;
+    margin-top: 0;
+}
+
+.input-group {
+    margin-bottom: 15px; /* Space between input groups */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px; /* Space between label and input */
+    color: #333;
+}
+
+.input-group input[type="text"],
+.input-group select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: calc(100% - 22px); /* Adjusted width to fit padding */
+    box-sizing: border-box;
+}
+
+.search-section button {
+    background: linear-gradient(to right, #3671fd, #6f31ff);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    margin: 10px auto;
+}
+
+.search-section button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-list-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.report-list-section h2 {
+    color: #000000;
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    margin: 30px 0;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f7f7f7;
+    color: #000;
+    text-align: center;
+}
+
+td {
+    color: #333;
+    position: relative;
+    text-align: center; /* Center the content of table cells */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.remove-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 25px;
+    color: #666;
+}
+
+.remove-btn:hover {
+    color: #ff0000;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+#no-report-msg{
+    display:none; 
+    color:red;
+    text-align: center;
+    font-size: larger;
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 12px;
+    }
+    
+    .input-group input[type="text"],
+    .input-group select {
+        width: 100%;
+    }
+
+    .search-section button {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    .remove-btn {
+        font-size: 20px;
+    }
+    #no-report-msg{
+        display:none; 
+        color:red;
+        text-align: center;
+        font-size: small;
+    }
+}

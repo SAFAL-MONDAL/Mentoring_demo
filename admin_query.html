@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query List</title>
+    <link rel="stylesheet" href="admin_query.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Query List</h1>
+        
+        <div class="button-container">
+            <button id="clear-button" class="clear-btn">Clear All Data</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>User Type</th>
+                        <th>Registration No.</th>
+                        <th>Query</th>
+                        <th>Parent Type</th>
+                        <th>Student Name</th>
+                        <th>Student Registration</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="queries-tbody"></tbody>
+            </table>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <script src="admin_query.js"></script>
+</body>
+</html>

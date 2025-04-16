@@ -1,0 +1,215 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4a90e2, #d57bfc);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Style */
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 30px;
+    color: #333;
+    margin: 0;
+}
+p{
+    color: red;
+}
+/* Container Box */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+/* Input Fields */
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(to right, #3671fd, #6f31ff);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 10%; /* Set all buttons to 30% width */
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    margin-top: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Search Section */
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Search Results Section */
+.search-results {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Back Button */
+.back-button {
+    background: linear-gradient(to right, #3671fd, #6f31ff);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 10%; /* Set all buttons to 30% width */
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Table Styling */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    display: block; /* Allows horizontal scrolling */
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px; /* Reduced padding for better fit on mobile */
+    text-align: left;
+    font-size: 14px; /* Adjusted font size for mobile */
+}
+
+.styled-table th {
+    background-color: #23ace7;
+    color: #fff;
+    font-weight: bold;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.styled-table tr:hover {
+    background-color: #e1e1e1;
+}
+
+/* Responsive Styles */
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .search-button, .back-button {
+        width: 20%; /* Set buttons to 30% width */
+    }
+
+    .styled-table {
+        font-size: 12px; /* Smaller font size for small screens */
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 6px; /* Reduced padding for better fit */
+    }
+}
+
+/* Very Small Mobile screens */
+@media (max-width: 576px) {
+    .search-button, .back-button {
+        width: 20%; /* Set buttons to 30% width */
+    }
+
+    .styled-table {
+        font-size: 10px; /* Even smaller font size for very small screens */
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 4px; /* Minimum padding for very small screens */
+    }
+}
+
+
+/* Tablet screens */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .search-button, .back-button {
+        width: 20%; /* Set buttons to 30% width */
+    }
+
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        max-width: 100%; /* Ensure table fits within container */
+    }
+
+    .styled-table th, .styled-table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+        font-size: 14px; /* Adjust font size for tablets */
+    }
+}
+/* Desktop and Laptop screens */
+@media (min-width: 1050px) {
+    .search-button, .back-button {
+        width: 10%; /* Set buttons to 10% width */
+    }
+
+    .container {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .styled-table {
+        width: 100%;
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 40px; /* Consistent padding for better appearance */
+    }
+}

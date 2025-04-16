@@ -1,9 +1,6 @@
+nginx.conf
 node_modules
-dist
 package-lock.json
-yarn.lock
-.DS_Store
-.env
+package.json
+README.md
 .dockerignore
-docker-compose.override.yml
-docker-compose.override.dev.yml 

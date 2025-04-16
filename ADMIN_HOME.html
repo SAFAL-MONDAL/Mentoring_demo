@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="HOME.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="box" onclick="openPage('mentee_list.html')">
+      <i class="fas fa-users"></i>
+      <h3>Mentee List</h3>
+    </div>
+    <div class="box" onclick="openPage('mentee_responce.html')">
+      <i class="fas fa-file-alt"></i>
+      <h3>Form Response</h3>
+    </div>
+    <div class="box" onclick="openPage('feedbackResponse.html')">
+      <i class="fas fa-comment-dots"></i>
+      <h3>Feedback Response</h3>
+    </div>
+    <div class="box" onclick="openPage('excel_upload.html')">
+      <i class="fas fa-list"></i>
+      <h3>Update List</h3>
+    </div>
+    <div class="box" onclick="openPage('add_performance.html')">
+      <i class="fas fa-chart-line"></i>
+      <h3>Update Performance</h3>
+    </div>
+    <div class="box" onclick="openPage('admin_meeting.html')">
+      <i class="fas fa-calendar-alt"></i>
+      <h3>Update Meeting Info</h3>
+    </div>
+    <div class="box" onclick="openPage('admin_query.html')">
+      <i class="fas fa-question-circle"></i>
+      <h3>Query/Grievance List</h3>
+    </div>
+    <div class="box" onclick="openPage('Card_upload.html')">
+      <i class="fas fa-upload"></i>
+      <h3>Upload Report Card</h3>
+    </div>
+    <div class="box" onclick="openPage('Card_view.html')">
+      <i class="fas fa-file-alt"></i>
+      <h3>Report Card</h3>
+    </div>
+  </div>
+  <script>
+    function openPage(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>

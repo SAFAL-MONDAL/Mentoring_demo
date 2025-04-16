@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #4a90e2, #d57bfc);
+  }
+  
+  header {
+    background-color: #ffffff; /* White header */
+    padding: 1px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+  }
+
+main {
+    padding: 20px;
+}
+.search-section label {
+    /* Make the label font size smaller and add some margin to create some space */
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .search-section input[type="text"] {
+    /* Add some padding and border radius to the input field */
+    padding: 10px;
+    border-radius: 5px;
+    /* Add a border to the input field */
+    border: 1px solid #ccc;
+  }
+  
+.search-section, .students-list, .student-details {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+    color: #000000;
+}
+
+#student-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#student-list li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#student-list li:hover {
+    background-color: #e6f7ff;
+}
+
+#student-details p {
+    margin: 5px 0;
+}
+
+#back-btn,#search-btn {
+	background: linear-gradient(to right, #3671fd, #6f31ff); /* Primary color for buttons */
+	color: #fff;
+	border: none;
+	padding: 12px 24px; /* Increased padding for larger button */
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+	border-radius: 5px;
+	box-shadow:0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#back-btn:hover {
+    opacity: 0.9; /* Darker shade for hover effect */
+	transform: scale(1.05); /* Slightly enlarge the button on hover */
+	box-shadow:0 5px 10px rgba(0, 0.1, 0.1, 0.5);
+}
+#search-btn:hover{
+    opacity: 0.9; /* Darker shade for hover effect */
+	transform: scale(1.05); /* Slightly enlarge the button on hover */
+	box-shadow:0 5px 10px rgba(0, 0.1, 0.1, 0.5);
+}
+#delete-btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 3px;
+    color: #666;
+}
+#delete-btn:hover{    color: #ff0000;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+#error-msg {
+    color: red;
+}
+
+.section-divider {
+    background-color: #23ace7;
+    height: 1.5px;
+    border: none;
+  }
